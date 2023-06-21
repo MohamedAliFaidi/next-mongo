@@ -2,10 +2,11 @@ import Blog from "@/lib/models/blog";
 import connect from "@/lib/db.connect";
 
 export async function POST(req) {
-  try {
-    const { author, title,content } = req.body;
-    await connect;
-    const blog = await Blog.create({ author, title,content }).then((res) => {
+    try {
+        const { author, title,content } = req.body;
+        await connect;
+    const body = await req.json();
+    const blog = await Blog.create(body).then((res) => {
       console.log(res);
     });
     return new Response(JSON.stringify({ success: true, message: "success" }), {
