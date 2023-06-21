@@ -8,26 +8,11 @@ function Page() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const create = useCallback(async () => {
-    console.log(
-      JSON.stringify({
-        author,
-        title,
-        content,
-      })
-    );
-    const res = await fetch("http://localhost:3000/api/blog", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        author,
-        title,
-        content,
-      }),
-    });
-    const data = await res.json();
-    console.log(data);
-  }, [author, title, content]);
+  //TOOD: create a function to create a blog with a http post request to api route that we already created
+  // use absolute path for the api route (hint: http://localhost:3000/api/blog) 
+  // handle the ui depending on the response
+
+
   return (
     <div className={styles.div}>
       This is the blog page

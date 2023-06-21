@@ -1,6 +1,9 @@
 import User from "@/lib/models/user";
 import connect from "@/lib/db.connect";
 
+// we can also define the route inside the page folder like this
+//api folder is related to  leagcy nextjs 
+
 export async function GET(req) {
   try {
     const { email, password } = req.body;
