@@ -7,6 +7,8 @@ import connect from "@/lib/db.connect";
 export async function GET(req) {
   try {
     const { email, password } = req.body;
+    // or 
+    // body = await req.json()
     await connect;
     const user = await User.create({ email, password }).then((res) => {
       console.log(res);
